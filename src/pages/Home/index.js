@@ -5,7 +5,6 @@ const Home = () => {
     return <div className="app">
     <Edit />
     <List />
-    <Edit />
     </div>
 }
 
