@@ -1,6 +1,7 @@
 import React from 'react';
 import Edit from "./components/Edit";
 import List from "./components/List";
+import {API_GET_DATA } from "../../global/constants"
 import "./index.css";
 import { useEffect, useState } from "react";
 //1:18:00
@@ -8,8 +9,12 @@ import { useEffect, useState } from "react";
 const Home = () => {
     const [data, setData] = useState([]);
     useEffect(()=>{
-        window.alert("123")
-    },[data])
+        fetch(API_GET_DATA)
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+        }) 
+    },[])
     return (
     <div className="app">
         <Edit add={setData} />

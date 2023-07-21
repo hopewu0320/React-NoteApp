@@ -3,7 +3,7 @@ const Item = ({ id, note, date, time, deleteData}) => {
     function deleteItem(){
         deleteData(function(prev){
             console.log(prev)
-            return prev.filter(item => item.id!=id)
+            return prev.filter(item => item.id!==id)
         })
     }
   return (
